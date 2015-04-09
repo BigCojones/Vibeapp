@@ -2,6 +2,8 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {})
 
+.controller('HomeCtrl', function($scope) {})
+
 .controller('ChatsCtrl', function($scope, Chats) {
   $scope.chats = Chats.all();
   $scope.remove = function(chat) {
@@ -18,3 +20,9 @@ angular.module('starter.controllers', [])
     enableFriends: true
   };
 });
+
+function BackCtrl($scope, $ionicHistory) {
+  $scope.myGoBack = function() {
+    $ionicHistory.goBack();
+  };
+}

@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('Vibe', ['ionic', 'starter.controllers', 'starter.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -34,6 +34,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: "/tab",
     abstract: true,
     templateUrl: "templates/tabs.html"
+  })
+
+    .state('home', {
+    url: '/home',
+    templateUrl: 'templates/home.html',
+        controller: 'HomeCtrl'
+      }
+    }
   })
 
   // Each tab has its own nav history stack:
@@ -73,6 +81,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       'tab-account': {
         templateUrl: 'templates/tab-account.html',
         controller: 'AccountCtrl'
+      }
+    }
+  })
+
+  .state('tab.things', {
+    url: '/things',
+    views: {
+      'tab-things': {
+        templateUrl: 'templates/tab-things.html',
+        controller: 'DashCtrl'
       }
     }
   });
